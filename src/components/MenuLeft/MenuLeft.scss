@@ -1,0 +1,39 @@
+@import "../../scss/index.scss";
+
+.ui.menu.vertical.menu-left {
+  display: flex;
+  justify-content: start;
+  border-radius: 0;
+  background-color: $primary_color;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+
+  .item,
+  a.item {
+    color: $font-light;
+    font-weight: bold;
+    font-size: 16px;
+    border-left: 4px solid transparent;
+    width: 100%;
+
+    &:hover {
+      background-color: $primary_color_highlight !important;
+      border-color: $font-dark;
+      color: $font-dark !important;
+      cursor: pointer;
+    }
+    &.active {
+      color: $font-light !important;
+      background-color: $primary_color_dark !important;
+      border-color: $font-light !important;
+      cursor: pointer;
+
+      &:hover {
+        color: $font-light !important;
+        background-color: $primary_color_dark !important;
+        cursor: pointer;
+      }
+    }
+  }
+}

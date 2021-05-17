@@ -1,0 +1,57 @@
+@import "../../../scss/index.scss";
+
+.ui.modal.basic-modal {
+  background-color: $primary_color_dark;
+  border-radius: 12px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: transparent;
+    color: $primary_color_highlight;
+
+    .basic-modal__header-left {
+      display: flex;
+      justify-content: start;
+
+      h3 {
+        font-size: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 25px;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+
+        &:hover {
+          color: $font-light;
+        }
+      }
+      i {
+        &:hover {
+          cursor: pointer;
+          color: $font-light;
+        }
+      }
+    }
+
+    .basic-modal__header-right {
+      i {
+        right: 10px;
+        top: 16px;
+
+        &:hover {
+          cursor: pointer;
+          color: $font-light;
+        }
+      }
+    }
+  }
+  .content {
+    color: $font-light;
+    background-color: $primary_color_medium;
+  }
+}

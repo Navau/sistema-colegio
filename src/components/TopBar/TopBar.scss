@@ -1,0 +1,62 @@
+@import "../../scss/index.scss";
+
+.top-bar {
+  position: fixed;
+  background-color: $primary_color_dark;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 2;
+  width: 100%;
+
+  &__help {
+    height: 50px;
+    z-index: 0;
+  }
+
+  &__left {
+    i {
+      font-size: 20px !important;
+      color: $primary_color_light;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary_color_highlight;
+      }
+    }
+  }
+
+  &__logout {
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      color: $primary_color_light;
+
+      &:hover {
+        color: $primary_color_highlight;
+      }
+
+      .ui.image {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        border-radius: 50px;
+      }
+    }
+
+    i {
+      color: $primary_color_highlight;
+      &:hover {
+        cursor: pointer;
+        color: red;
+      }
+    }
+  }
+}

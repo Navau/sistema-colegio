@@ -1,0 +1,91 @@
+@import "../../scss/index.scss";
+.login-form {
+  margin-top: 20px;
+  .ui.form {
+    .field {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      justify-content: space-between;
+      label {
+        color: $primary_color_highlight !important;
+      }
+      .ui.icon.input {
+        margin-bottom: 20px;
+        input {
+          background-color: $primary_color_medium;
+          font-size: 16px;
+          color: $primary_color_highlight;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $background-grey-hover;
+            border-color: $primary_color_light;
+          }
+          &[type="number"]::-webkit-inner-spin-button,
+          &[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
+        }
+
+        i {
+          color: $primary_color_highlight;
+          font-size: 25px;
+        }
+      }
+
+      .ui.error.icon.input {
+        border-bottom: 1px solid $color-error;
+        margin: 0;
+      }
+
+      .ui.fluid.search.selection.dropdown {
+        background-color: $primary_color_medium;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+
+        input,
+        .divider.text {
+          color: $primary_color_highlight;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $background-grey-hover;
+          border-color: $primary_color_light;
+        }
+        i {
+          color: $primary_color_highlight;
+          font-size: 25px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      background-color: $primary_color_highlight;
+      color: $primary_color_dark;
+      margin-top: 20px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      padding: 15px 0;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    .error-text {
+      color: $color-error;
+      padding-left: 15px;
+      margin: 0;
+    }
+  }
+}

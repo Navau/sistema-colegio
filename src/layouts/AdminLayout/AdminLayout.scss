@@ -1,0 +1,43 @@
+@import "../../scss/index.scss";
+
+.ui.grid.admin-layout {
+  background-color: $primary_color_highlight;
+  min-height: 100vh;
+  margin: 0;
+
+  > .row {
+    padding: 0;
+    height: 100%;
+    .column {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .content {
+    overflow: scroll;
+    height: 100vh;
+  }
+}
+//   .row {
+//     padding: 0;
+//     margin: 0;
+
+//     .three.wide.column,
+//     .thirteen.wide.column {
+//       padding: 0;
+//       margin: 0;
+
+//       .thirteen.wide.column.content {
+//         overflow: scroll;
+//         margin: 0;
+//         height: calc(100vh - 105px);
+//         padding: 0;
+//       }
+//     }
+//   }
+
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }

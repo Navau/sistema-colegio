@@ -1,0 +1,31 @@
+@import "../../scss/index.scss";
+
+.paginationSR {
+  margin-top: 25px;
+  .ui.pagination.menu {
+    background-color: $primary_color_dark !important;
+
+    .item {
+      display: flex;
+      justify-content: center;
+      color: $font-light;
+      font-size: 15px !important;
+      padding: 0px;
+      i {
+        color: $font-light;
+      }
+      &:hover {
+        background-color: $primary_color_light;
+      }
+    }
+    .active.item {
+      color: $font-light;
+      background-color: $primary_color_medium;
+      font-size: 15px !important;
+      padding: 0px;
+      &:hover {
+        background-color: $primary_color_light;
+      }
+    }
+  }
+}

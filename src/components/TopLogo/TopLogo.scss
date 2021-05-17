@@ -1,0 +1,17 @@
+@import "../../scss/index.scss";
+
+.top-logo {
+  background-color: $primary_color;
+  margin: 0;
+
+  .ui.tiny.circular.image {
+    height: auto;
+    margin: auto;
+  }
+
+  &:hover {
+    color: $font-light !important;
+    background-color: $primary_color_medium !important;
+    cursor: pointer;
+  }
+}

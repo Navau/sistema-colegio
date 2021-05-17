@@ -1,0 +1,53 @@
+@import "../../../scss/index.scss";
+
+.ui.form.add-student-form {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-gap: 20px;
+  margin: 25px;
+  .student-photo {
+    position: relative;
+    background-color: $primary_color_dark;
+    height: 100%;
+    margin: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .photo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+    &:hover {
+      background-color: $primary_color;
+      cursor: pointer;
+    }
+  }
+
+  .student-inputs {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    .field {
+      width: 100%;
+      label {
+        color: $font-light;
+      }
+      .ui.input {
+        input {
+          background-color: $primary_color_dark;
+          font-size: 16px;
+          color: $primary_color_highlight;
+        }
+      }
+    }
+  }
+}

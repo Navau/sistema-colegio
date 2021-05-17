@@ -1,0 +1,30 @@
+@import "../../../scss/index.scss";
+
+.list-persons {
+  background-color: transparent;
+  display: table-row;
+  font-size: 100% !important;
+
+  th {
+    background-color: transparent;
+  }
+
+  tr {
+    &:hover {
+      cursor: pointer;
+
+      td {
+        color: $font-light;
+      }
+    }
+
+    // td {
+    //   i {
+    //     color: $primary_color_highlight;
+    //     &:hover {
+    //       color: $primary_color_light;
+    //     }
+    //   }
+    // }
+  }
+}

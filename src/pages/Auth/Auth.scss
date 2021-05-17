@@ -1,0 +1,53 @@
+@import "../../scss/index.scss";
+
+.auth {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__bg-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: $background_dark;
+    opacity: 0.65;
+    z-index: 0;
+  }
+
+  &__box {
+    position: absolute;
+    background-color: $primary_color_dark;
+    width: calc(100%-20%);
+    z-index: 1;
+    padding: 50px 70px;
+    border-radius: 50px;
+
+    &__logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      h1 {
+        color: $primary_color_highlight;
+        font-size: 45px;
+        padding: 0 5px 30px 30px;
+        margin: 0 auto;
+      }
+      h2 {
+        color: $primary_color_highlight;
+        font-size: 25px;
+        padding: 0 0 30px 30px;
+        margin: 0 auto;
+      }
+      img {
+        width: calc(100vh - 80vh);
+        border-radius: 100px;
+      }
+    }
+  }
+}
