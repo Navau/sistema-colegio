@@ -31,8 +31,8 @@ export default function Auth(props) {
         <div className="auth__box__logo">
           <img src={LogoSchool} alt="Logo Ave Maria" />
           <div>
-            <h1>Ave Maria</h1>
-            <h2>Sistema de Gestion</h2>
+            <h1>Ave María</h1>
+            <h2>Sistema de Gestión</h2>
           </div>
         </div>
         {handlerForm()}

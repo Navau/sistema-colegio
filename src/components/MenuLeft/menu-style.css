@@ -1,0 +1,18 @@
+.header.titulo-menus {
+  color: azure;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.header.SUB-DIV-MENUS {
+  height: 40px;
+  background-color: black;
+  color: aliceblue;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+}
+.p-titulo-menu {
+  justify-content: center;
+}

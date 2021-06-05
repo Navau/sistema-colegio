@@ -1,0 +1,24 @@
+.card-teacher {
+  margin: 30px;
+  height: 0px;
+  width: 250px;
+}
+.ui.segments {
+  background-color: #042b3d;
+}
+
+.ui.top.attached.header {
+  background-color: #042b3d;
+}
+h5.ui.attached.header {
+  background-color: #042b3d;
+  color: #ffff;
+  text-align: center;
+}
+.thirteen.wide.column.content {
+  background-color: #194d55;
+}
+.ui.message.fond-message {
+  background-color: #042b3d;
+  color: aliceblue;
+}

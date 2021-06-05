@@ -1,0 +1,23 @@
+.ui.input.input-calification {
+  width: 60px;
+  height: 20px;
+}
+.ui.fluid.search.selection.dropdown.list-drop {
+  width: 200px;
+  margin-left: 300px;
+  margin-bottom: 50px;
+}
+
+.ui.fluid.search.selection.dropdown.list-drop3 {
+  width: 200px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  margin-top: -88px;
+}
+.button-calification {
+  margin: 50px;
+}
+.ui.celled.inverted.selectable.striped.padded.table.tabla-notas {
+  width: 900px;
+  margin-left: 100px;
+}

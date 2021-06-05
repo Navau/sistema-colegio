@@ -1,0 +1,31 @@
+.filtrar-calification {
+  width: 600px;
+  margin: 50px;
+  margin-top: -20px;
+  align-content: center;
+}
+
+.table-Calification {
+  margin: 50px;
+  margin-top: -10px;
+}
+.message {
+  margin: 50px;
+}
+.ui.fluid.search.selection.dropdown.data-select {
+  width: 500px;
+  margin-left: auto;
+  background-color: cornsilk;
+  color: black;
+}
+
+.ui.fluid.search.selection.dropdown.data-select2 {
+  width: 300px;
+  margin-left: 0px;
+  background-color: cornsilk;
+  color: black;
+}
+.ui.form.contenido-from-verNotas {
+  align-content: center;
+  margin-left: 220px;
+}

@@ -1,0 +1,31 @@
+.ui.form.form-memorandum-secre {
+  margin-left: 70px;
+}
+.label-memorandum {
+  color: cornsilk !important;
+}
+.ui.large.labels.info-teacher-memorandum {
+  margin-left: 625px;
+  width: 350px;
+  margin-top: -120px;
+}
+.ui.label.label-memorandum-info {
+  width: 100px;
+  color: black;
+}
+
+.ui.label.label-memorandum-info2 {
+  width: 150px;
+  color: black;
+}
+
+.ui.celled.inverted.selectable.table.tabla-info-memorandum-teacher {
+  width: 900px;
+  margin-top: 30px;
+  margin-left: 100px;
+  text-align: center;
+}
+.titulo-lista-memorandum {
+  margin-left: 400px;
+  margin-top: 100px;
+}

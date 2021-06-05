@@ -1,0 +1,27 @@
+.div-id_curso {
+  height: 150px;
+  width: 250px;
+  margin-left: 50px;
+}
+
+.div-input {
+  position: relative;
+}
+.ui.celled.inverted.selectable.striped.padded.table {
+  width: 300px;
+  height: 100px;
+}
+.tabla-materias {
+  margin-top: -150px;
+  width: 521px;
+  height: 300px;
+  overflow: auto;
+}
+.ui.form {
+  width: 500px;
+  height: 150px;
+  margin-left: 500px;
+}
+.modal-titulos-add-material {
+  color: #ffff;
+}

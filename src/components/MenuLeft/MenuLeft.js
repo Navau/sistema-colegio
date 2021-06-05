@@ -1,48 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { Menu, Icon } from "semantic-ui-react";
+import { Menu, Icon, MenuHeader } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 import TopLogo from "../../components/TopLogo";
-
 import "./MenuLeft.scss";
+import "./menu-style.css";
 
 function MenuLeft(props) {
-  const { location } = props;
-
+  const { location, user } = props;
   const [activeMenu, setActiveMenu] = useState(location.pathname);
   const handlerMenu = (e, menu) => {
     setActiveMenu(menu.to);
   };
-
   return (
     <>
       <Menu className="menu-left" vertical>
+        <MenuHeader className="titulo-menus">DIRECTOR</MenuHeader>
         <Menu.Item as={Link} to="/" onClick={handlerMenu} header>
           <TopLogo />
         </Menu.Item>
         <Menu.Item
           as={Link}
           to="/"
-          active={activeMenu === "/"}
+          //active={activeMenu === "/"}
           onClick={handlerMenu}
         >
           Inicio <Icon name="home" />
         </Menu.Item>
         <Menu.Item
           as={Link}
-          to="/students-management"
-          active={activeMenu === "/students-management"}
+          to="/perfil-teacher"
+          active={activeMenu === "/perfil-teacher"}
           onClick={handlerMenu}
         >
-          Gestión de Estudiantes <Icon name="student" />
+          Perfil <Icon name="calendar alternate outline" />
         </Menu.Item>
-        <Menu.Item
-          as={Link}
-          to="/teachers-management"
-          active={activeMenu === "/teachers-management"}
-          onClick={handlerMenu}
-        >
-          Gestión de Profesores <Icon name="users" />
-        </Menu.Item>
+        <MenuHeader className="SUB-DIV-MENUS">
+          <p className="p-titulo-menu">Gestion de Horarios y Calificaciones</p>
+        </MenuHeader>
         <Menu.Item
           as={Link}
           to="/qualification-management"
@@ -63,5 +57,4 @@ function MenuLeft(props) {
     </>
   );
 }
-
 export default withRouter(MenuLeft);

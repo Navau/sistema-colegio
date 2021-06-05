@@ -6,12 +6,16 @@ import { PARAMS } from "./utils/constants";
 
 import AdminLayout from "./layouts/AdminLayout";
 import Auth from "./pages/Auth";
-import Loading from "./components/Loading";
+import LoadingLogin from "./components/Loading/Loading";
 
 import "firebase/firestore";
 
 const db = firebase.firestore(firebase);
-
+document.addEventListener("wheel", function (event) {
+  if (document.activeElement.type === "number") {
+    document.activeElement.blur();
+  }
+});
 export default function App() {
   const [user, setUser] = useState(null);
   const [params, setParams] = useState(null);
@@ -33,8 +37,16 @@ export default function App() {
         if (paramsArray.zid && paramsArray.type) {
           const idUserAux = atob(paramsArray.zid);
           const typeUserAux = atob(paramsArray.type);
-          db.collection(typeUserAux + "s")
-            .where("id", "==", idUserAux)
+          const typeUserCollection =
+            typeUserAux == "Secretario"
+              ? "admins"
+              : typeUserAux == "Director"
+              ? "admins"
+              : typeUserAux == "Profesor"
+              ? "teachers"
+              : "admins";
+          db.collection(typeUserCollection)
+            .where("accountId", "==", idUserAux)
             .limit(1)
             .get()
             .then((response) => {
@@ -43,7 +55,9 @@ export default function App() {
                 setUser(userAux);
               });
             })
-            .catch(() => {})
+            .catch(() => {
+              console.log("ERROR");
+            })
             .finally(() => {
               setIsLoading(false);
             });
@@ -55,7 +69,7 @@ export default function App() {
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return <LoadingLogin />;
   }
 
   return (
@@ -67,14 +81,13 @@ export default function App() {
       )}
       <ToastContainer
         position="bottom-left"
-        autoClose={5000}
-        hideProgressBar
+        autoClose={6000}
         newestOnTop
         closeOnClick
         rtl={false}
         pauseOnVisibilityChange
         draggable
-        pauseOnHover={false}
+        pauseOnHover={true}
       />
     </>
   );

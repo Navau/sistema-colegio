@@ -8,7 +8,8 @@ import "./TopBar.scss";
 export default function TopBar(props) {
   const { user } = props;
   const logout = () => {
-    console.log("CERRANDO SESION...");
+    localStorage.clear();
+    window.location.reload(true);
   };
   return (
     <>
@@ -19,7 +20,7 @@ export default function TopBar(props) {
         <div className="top-bar__logout">
           <Link to="/">
             <Image src={DefaultUserImage} />
-            {user.names}
+            {user.firstName + " " + user.secondName}
           </Link>
           <Icon name="power off" onClick={logout} />
         </div>

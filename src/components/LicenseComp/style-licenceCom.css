@@ -1,0 +1,31 @@
+.ui.form.form-licences-secre {
+  margin-left: 70px;
+}
+.label-formita {
+  color: cornsilk !important;
+}
+.ui.large.labels.info-student-license {
+  margin-left: 625px;
+  width: 350px;
+  margin-top: -120px;
+}
+.ui.label.label-licenicas-info {
+  width: 100px;
+  color: black;
+}
+
+.ui.label.label-licenicas-info2 {
+  width: 150px;
+  color: black;
+}
+
+.ui.celled.inverted.selectable.table.tabla-info-licences-estudiante {
+  width: 900px;
+  margin-top: 30px;
+  margin-left: 100px;
+  text-align: center;
+}
+.titulo-lista-licencias {
+  margin-left: 450px;
+  margin-top: 100px;
+}

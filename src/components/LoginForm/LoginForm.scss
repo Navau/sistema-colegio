@@ -2,6 +2,7 @@
 .login-form {
   margin-top: 20px;
   .ui.form {
+    margin-left: auto;
     .field {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -22,15 +23,6 @@
           &:focus {
             background-color: $background-grey-hover;
             border-color: $primary_color_light;
-          }
-          &[type="number"]::-webkit-inner-spin-button,
-          &[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-
-          &[type="number"] {
-            -moz-appearance: textfield;
           }
         }
 

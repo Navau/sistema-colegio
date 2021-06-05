@@ -1,0 +1,52 @@
+.table-schedule {
+  border-radius: 2px solid black;
+  margin: 20px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0px;
+  position: relative;
+}
+
+.button-managements2 {
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.Modal {
+  background-color: blue;
+}
+.content-modal {
+  background-color: #194d55 !important;
+}
+.fonfo {
+  background-color: #042b3d !important;
+}
+.modal-schedule {
+  background-color: #042b3d !important;
+}
+.modal-content-schedule {
+  background-color: #194d55 !important;
+}
+.ui.fluid.search.selection.dropdown.material-select {
+  background-color: lightslategrey;
+  color: black;
+  font-weight: bold;
+}
+.actions.fono {
+  background-color: #042b3d !important;
+}
+.class-dropdown {
+  margin: 50px;
+  margin-left: 600px;
+  margin-top: -100px;
+}
+.ui.fluid.search.selection.dropdown.select-schedule {
+  width: 150px;
+  margin-top: -25px;
+}
+.ui.fluid.search.selection.dropdown.select-schedule2 {
+  width: 200px;
+  margin-bottom: -38px;
+  margin-left: 200px;
+}
