@@ -1,0 +1,86 @@
+@import "../../scss/index.scss";
+
+.data {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row !important;
+
+  .card {
+    .ui.card {
+      background-color: $primary_color;
+      .card-perfil {
+        background-color: $primary_color_dark_hover;
+      }
+      .card-header {
+        > div {
+          p {
+            color: $font-light;
+            font-weight: bold;
+          }
+        }
+      }
+      .card-meta {
+        h5 {
+          color: $font-light;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .content-form-data-user {
+    width: 30%;
+    .ui.header {
+      background-color: $primary_color_dark;
+      color: $font-light;
+    }
+    .ui.segment {
+      background-color: $primary_color_dark_hover;
+      color: $font-dark;
+    }
+  }
+
+  .content-form-data-user2 {
+    width: 30%;
+    .ui.header {
+      background-color: $primary_color_dark;
+      color: $font-light;
+    }
+    .ui.segment {
+      background-color: $primary_color_dark_hover;
+      color: $font-dark;
+    }
+  }
+}
+
+.change-phone {
+  display: flex;
+  justify-content: center;
+  .boton-mof-cell-perfil {
+    font-size: 30px !important;
+  }
+}
+
+.ui.modal {
+  .fondo-mof-cel-perfil {
+    .description {
+      .ui.header.titulo-modal-mod-cel {
+        h2 {
+          color: $font-light !important;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.ui.modal.modal-confirm {
+  h1 {
+    color: $font-light;
+  }
+  .content {
+    h3 {
+      color: $font-light;
+    }
+  }
+}

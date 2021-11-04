@@ -1,0 +1,10 @@
+@import "../../../scss/index.scss";
+
+.loading-table {
+  min-height: 40vh;
+  justify-content: center;
+  color: $primary_color_highlight;
+  .ui.text.loader {
+    display: flex;
+  }
+}

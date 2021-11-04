@@ -23,15 +23,6 @@
             background-color: $background-grey-hover;
             border-color: $primary_color_light;
           }
-          &[type="number"]::-webkit-inner-spin-button,
-          &[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-
-          &[type="number"] {
-            -moz-appearance: textfield;
-          }
         }
 
         i {

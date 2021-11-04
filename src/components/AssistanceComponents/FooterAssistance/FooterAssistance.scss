@@ -1,0 +1,14 @@
+@import "../../../scss/index.scss";
+
+.footer-assistance {
+  &__actions {
+    &__save-student {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      &__button-save {
+        font-size: 25px !important;
+      }
+    }
+  }
+}

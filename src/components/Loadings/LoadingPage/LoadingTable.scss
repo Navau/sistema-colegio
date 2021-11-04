@@ -1,0 +1,12 @@
+@import "../../../scss/index.scss";
+
+.loading-table {
+  min-height: 100vh;
+  justify-content: center;
+  color: $primary_color_highlight;
+
+  .ui.dimmer .ui.loader:after {
+    border-color: $primary_color_highlight $primary_color_dark
+      $primary_color_dark $primary_color_dark;
+  }
+}

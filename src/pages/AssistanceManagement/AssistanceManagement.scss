@@ -1,0 +1,11 @@
+@import "../../scss/index.scss";
+
+.assistance-management {
+  .ant-picker-calendar .ant-picker-calendar-full {
+    .ant-picker-panel {
+      background-color: $primary_color_dark !important;
+      color: $primary_color_highlight !important;
+      margin: 500px !important;
+    }
+  }
+}

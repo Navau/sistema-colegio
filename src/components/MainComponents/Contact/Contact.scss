@@ -1,0 +1,31 @@
+@import "../../../scss/index.scss";
+
+.contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px 0;
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 35px 300px;
+    .anticon {
+      font-size: 50px;
+      color: $font-light;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+      color: $font-light;
+    }
+    h4 {
+      color: $font-light;
+    }
+  }
+}

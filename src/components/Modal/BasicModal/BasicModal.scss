@@ -25,6 +25,8 @@
         justify-content: center;
         align-content: center;
         flex-direction: column;
+        color: $primary_color_highlight;
+        font-weight: bold;
 
         &:hover {
           color: $font-light;
@@ -53,5 +55,39 @@
   .content {
     color: $font-light;
     background-color: $primary_color_medium;
+  }
+  .actions {
+    background-color: $primary_color_dark;
+    text-align: center;
+
+    .buttons-left-right {
+      display: flex;
+      justify-content: space-around;
+      button {
+        background-color: $primary_color_light;
+        color: $font-light;
+        margin: 25px 50px;
+        text-align: center;
+        &:hover {
+          color: $primary_color_light;
+          background-color: $font-light;
+        }
+      }
+
+      .ui.progress {
+        background-color: $primary_color_highlight;
+        margin: auto;
+        width: 100%;
+        .bar {
+          height: 2.2em;
+        }
+        .progress {
+          text-align: center;
+          left: 0;
+          color: $font-light;
+          font-size: 25px;
+        }
+      }
+    }
   }
 }

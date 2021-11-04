@@ -1,0 +1,35 @@
+@import "../../../scss/index.scss";
+
+.slider-images {
+  &__image {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  .slick-dots {
+    margin-bottom: 70px;
+    text-align: center;
+    ul {
+      padding-left: 0;
+    }
+    li {
+      button:before {
+        opacity: 0.75;
+        font-size: 15px;
+        color: $primary_color_highlight;
+      }
+    }
+    .slick-active {
+      text-align: center;
+      button:before {
+        font-size: 18px;
+        color: $font-light;
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+  }
+}

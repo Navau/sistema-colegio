@@ -1,0 +1,35 @@
+@import "../../../scss/index.scss";
+
+.slider-form-items {
+  .slick-arrow {
+    display: none !important;
+  }
+  .slick-list {
+    overflow: hidden;
+  }
+  .slick-slider {
+    z-index: 1;
+  }
+
+  .slick-dots {
+    text-align: center;
+    ul {
+      padding-left: 0;
+    }
+    li {
+      button:before {
+        font-size: 15px;
+        color: $primary_color_highlight;
+      }
+    }
+    .slick-active {
+      text-align: center;
+      button:before {
+        font-size: 18px;
+        color: $font-light;
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+  }
+}
