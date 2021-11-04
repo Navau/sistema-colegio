@@ -2,11 +2,21 @@ import { map } from "lodash";
 import React, { useState, useEffect } from "react";
 import { Button, Form, Dropdown, Message } from "semantic-ui-react";
 import { TableCalification } from "../../components/TableCalification/TableCalification";
+<<<<<<< HEAD
+=======
+import { removeArrayDuplicatesObjectOrderByValue } from "../../utils/arrayFunctions";
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 import firebase from "../../utils/firebase";
 import "./QualificationManagement.scss";
+import "./styl.css";
 
 const db = firebase.firestore(firebase);
 
+<<<<<<< HEAD
+const db = firebase.firestore(firebase);
+
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 const academic_level = [
   { key: "1", value: "Primaria", text: "Primaria" },
   { key: "2", value: "Secundaria", text: "Secundaria" },
@@ -72,6 +82,7 @@ export default function QualificationManagement() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div className="qualification-management">
       <div className="message">
         <Message className="fond-message">
@@ -121,5 +132,75 @@ export default function QualificationManagement() {
 
       <TableCalification />
     </div>
+=======
+    <>
+      <div className="fondo-pag">
+        <div className="message">
+          <Message className="fond-message">
+            <Message.Header>
+              <center>
+                <h3>Ver Calificaciones - Unidad Educativa Ave Maria</h3>
+              </center>
+            </Message.Header>
+          </Message>
+        </div>
+        <div className="filtrar-calification">
+          <Form className="contenido-from-verNotas">
+            <Form.Group unstackable widths={2}>
+              <Dropdown
+                className="data-select"
+                placeholder="Nivel Academico"
+                fluid
+                search
+                selection
+                options={academic_level}
+                onChange={(e, data) => {
+                  onSelectLevelAcademic(data.value);
+                }}
+              />
+              <Dropdown
+                className="data-select"
+                placeholder="Curso"
+                fluid
+                search
+                selection
+                options={gradeList}
+              />
+            </Form.Group>
+            <Form.Group widths={2}>
+              <Dropdown
+                className="data-select2"
+                placeholder="Profesor"
+                fluid
+                search
+                selection
+                options={academic_level}
+              />
+              <Dropdown
+                className="data-select2"
+                placeholder="Materia"
+                fluid
+                search
+                selection
+                options={materialList}
+              />
+              <Dropdown
+                className="data-select2"
+                placeholder="Trimestre"
+                fluid
+                search
+                selection
+                options={trimestre}
+              />
+            </Form.Group>
+            <Button type="submit">Buscar</Button>
+          </Form>
+        </div>
+        <div className="table-Calification">
+          <TableCalification />
+        </div>
+      </div>
+    </>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   );
 }

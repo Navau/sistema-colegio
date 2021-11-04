@@ -1,0 +1,38 @@
+.content-form-data-user {
+  margin-top: -30px;
+  margin-left: 300px;
+  width: 350px;
+  height: 300px;
+}
+.content-form-data-user2 {
+  margin-top: -300px;
+  margin-left: 700px;
+  width: 350px;
+  height: 300px;
+}
+
+.ui.attached.segment {
+  color: black;
+  font-family: cursive;
+  text-align: center;
+  background-color: rgb(60, 78, 110);
+}
+.image.card-perfil-teacher {
+  height: 250px;
+}
+.center.aligned.header.hed {
+  color: #ffff;
+  background-color: #042b3d;
+}
+.center.aligned.meta.hed {
+  background-color: #042b3d;
+  color: #ffff;
+}
+
+.ui.modal.transition.visible.active.modal-modf-cell-perfil {
+  width: 500px;
+  background-color: rgb(60, 78, 110);
+}
+.ui.positive.button.boton-mof-cell-perfil {
+  margin-left: 800px;
+}

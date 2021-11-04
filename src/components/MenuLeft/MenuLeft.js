@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { Menu, Icon, Dropdown } from "semantic-ui-react";
+=======
+import { Menu, Icon, MenuHeader } from "semantic-ui-react";
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 import { Link, withRouter } from "react-router-dom";
 import TopLogo from "../../components/TopLogo";
-
 import "./MenuLeft.scss";
+import "./menu-style.css";
 
 function MenuLeft(props) {
+<<<<<<< HEAD
   const { location, showHideMenu, userAccount } = props;
+=======
+  const { location, user } = props;
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   const [activeMenu, setActiveMenu] = useState(location.pathname);
 
   const handlerMenu = (e, menu) => {
     setActiveMenu(menu.to);
   };
-
   return (
     <>
+<<<<<<< HEAD
       {userAccount.typeUser === "Director" ||
       userAccount.typeUser === "Secretario" ? (
         <Menu className="menu-left" vertical>
@@ -230,8 +238,50 @@ function MenuLeft(props) {
           </Dropdown>
         </Menu>
       ) : null}
+=======
+      <Menu className="menu-left" vertical>
+        <MenuHeader className="titulo-menus">DIRECTOR</MenuHeader>
+        <Menu.Item as={Link} to="/" onClick={handlerMenu} header>
+          <TopLogo />
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/"
+          //active={activeMenu === "/"}
+          onClick={handlerMenu}
+        >
+          Inicio <Icon name="home" />
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/perfil-teacher"
+          active={activeMenu === "/perfil-teacher"}
+          onClick={handlerMenu}
+        >
+          Perfil <Icon name="calendar alternate outline" />
+        </Menu.Item>
+        <MenuHeader className="SUB-DIV-MENUS">
+          <p className="p-titulo-menu">Gestion de Horarios y Calificaciones</p>
+        </MenuHeader>
+        <Menu.Item
+          as={Link}
+          to="/qualification-management"
+          active={activeMenu === "/qualification-management"}
+          onClick={handlerMenu}
+        >
+          Gestión de Calificaciones <Icon name="book" />
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/schedules-management"
+          active={activeMenu === "/schedules-management"}
+          onClick={handlerMenu}
+        >
+          Gestión de Horarios <Icon name="calendar alternate outline" />
+        </Menu.Item>
+      </Menu>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     </>
   );
 }
-
 export default withRouter(MenuLeft);

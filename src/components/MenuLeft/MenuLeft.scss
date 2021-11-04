@@ -8,6 +8,7 @@
   height: 100vh;
   width: 100%;
   flex-direction: column;
+<<<<<<< HEAD
 
   h1 {
     color: $font-light;
@@ -133,6 +134,10 @@
       background-color: $primary_color_dark;
     }
   }
+=======
+  overflow: auto;
+  .item,
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   a.item {
     color: $font-light;
     font-weight: bold;

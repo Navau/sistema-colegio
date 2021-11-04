@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { toast, Zoom } from "react-toastify";
@@ -20,22 +21,48 @@ const typeLicen = [
   { key: "02", text: "Licencia Familiar", value: "Licencia Familiar" },
   { key: "03", text: "Licencia Academica", value: "Licencia Academica" },
   { key: "04", text: "Quitar", value: "" },
+=======
+import { map } from "lodash";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
+import { toast, Zoom } from "react-toastify";
+import { Form, Label, Table, Button, Input, Icon } from "semantic-ui-react";
+import firebase from "../../utils/firebase";
+
+import "./style-licenceCom.css";
+const db = firebase.firestore(firebase);
+
+const options = [
+  { key: "01", text: "Licencia Medica", value: "Licencia Medica" },
+  { key: "02", text: "Licencia Familiar", value: "Licencia Familiar" },
+  { key: "03", text: "Quitar", value: "" },
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 ];
 export const LicenseComp = (props) => {
   const fecha = new Date();
   const dateH = moment(fecha).format("YYYY-MM-DD");
+<<<<<<< HEAD
   const [open, setOpen] = React.useState(false);
   const [TipoLice, setTipoLice] = useState("");
   const [Cursoo, setCursoo] = useState("");
   const initialValuesLicences = {
     id_student: "",
     description: "",
+=======
+  const initialValuesLicences = {
+    id_student: "",
+    description: "",
+    type_license: "",
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     date_start: "",
     date_end: "",
   };
   const [dataLicences, setDataLicences] = useState(initialValuesLicences);
   const [dataEst, setDataStudent] = useState([]);
+<<<<<<< HEAD
   const [DataClassRoom, setDataClassRoom] = useState([]);
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   //const [dataClass, setDataClass] = useState([]);
   const { AddorEdit, updateId } = props;
   /**LLENAR DATOS A UN OBJETO */
@@ -46,11 +73,25 @@ export const LicenseComp = (props) => {
   /**EVENTO PARA MANDAR DATOS */
   const handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     setOpen(false);
     const newLicen = { ...dataLicences, type_license: TipoLice };
     AddorEdit(newLicen);
     setDataLicences({ ...initialValuesLicences });
   };
+=======
+    AddorEdit(dataLicences);
+    setDataLicences({ ...initialValuesLicences });
+  };
+  /*const consultaClass = () => {
+    db.collection("classRooms")
+      .doc(dataEst.classRoomId)
+      .get()
+      .then((response) => {
+        setDataClass(response.data());
+      });
+  };*/
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   /**capturar datos ESTUDIANTE */
   const handleSubmitEst = (e) => {
     e.preventDefault();
@@ -67,6 +108,7 @@ export const LicenseComp = (props) => {
             });
           }
         });
+<<<<<<< HEAD
       if (dataEst) {
         db.collection("classRooms")
           .doc(dataEst.classRoomId)
@@ -89,6 +131,8 @@ export const LicenseComp = (props) => {
         }
         //console.log(aaaa);
       }
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     } else {
       toast.error("Usuario No encontrado", {
         transition: Zoom,
@@ -136,6 +180,7 @@ export const LicenseComp = (props) => {
           </Form.Field>
           <Form.Field>
             <label className="label-formita">Tipo Licencia</label>
+<<<<<<< HEAD
             <Dropdown
               placeholder="Tipo Licencia"
               fluid
@@ -144,6 +189,14 @@ export const LicenseComp = (props) => {
               onChange={(e, data) => {
                 setTipoLice(data.value);
               }}
+=======
+            <Form.Input
+              fluid
+              placeholder="Tipo Licencia"
+              name="type_license"
+              value={dataLicences.type_license}
+              onChange={handleDataLicences}
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             />
           </Form.Field>
         </Form.Group>
@@ -181,18 +234,26 @@ export const LicenseComp = (props) => {
           />
         </Form.Field>
         <Button.Group>
+<<<<<<< HEAD
           <Button
             positive
             onClick={() => {
               setOpen(true);
             }}
           >
+=======
+          <Button positive onClick={handleSubmit}>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             {updateId === "" ? "Conceder Licencia" : "Actualizar Licencia"}
           </Button>
         </Button.Group>
       </Form>
       <Label.Group size="large" className="info-student-license">
+<<<<<<< HEAD
         <h2 className="titulo-info-estuden-h2">Datos Estudiante</h2>
+=======
+        <h2>Datos Estudiante</h2>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
         <Label className="label-licenicas-info">C.I.</Label>
         <Label className="label-licenicas-info2">
           {dataEst.id == undefined ? "No" : dataEst.id}
@@ -222,6 +283,7 @@ export const LicenseComp = (props) => {
         </Label>
         <br></br>
         <Label className="label-licenicas-info">Curso</Label>
+<<<<<<< HEAD
         <Label className="label-licenicas-info2">
           {Cursoo == "" ? "No" : Cursoo == undefined ? "No" : Cursoo}
         </Label>
@@ -254,6 +316,10 @@ export const LicenseComp = (props) => {
           </Modal.Actions>
         </Modal>
       </div>
+=======
+        <Label className="label-licenicas-info2">asf</Label>
+      </Label.Group>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     </>
   );
 };

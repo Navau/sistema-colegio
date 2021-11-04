@@ -1,6 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { toast, Zoom } from "react-toastify";
+<<<<<<< HEAD
 import {
   Form,
   Label,
@@ -35,11 +36,28 @@ export const MemorandumComp = (props) => {
   const initialValuesMemorandum = {
     id_teacher: "",
     description: "",
+=======
+import { Form, Label, Table, Button, Input, Icon } from "semantic-ui-react";
+import firebase from "../../utils/firebase";
+import "./style-MemorandumCom.css";
+const db = firebase.firestore(firebase);
+
+export const MemorandumComp = (props) => {
+  const fecha = new Date();
+  const dateH = moment(fecha).format("YYYY-MM-DD");
+  const initialValuesMemorandum = {
+    id_teacher: "",
+    description: "",
+    type_memorandum: "",
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     date_assigned: "",
   };
   const [dataMemorandum, setDataMemorandum] = useState(initialValuesMemorandum);
   const [dataTeacher, setDataTeacher] = useState([]);
+<<<<<<< HEAD
   const [dataMaterial, setdataMaterial] = useState([]);
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   //const [dataClass, setDataClass] = useState([]);
   const { AddorEdit, updateId } = props;
   /**LLENAR DATOS A UN OBJETO */
@@ -50,12 +68,26 @@ export const MemorandumComp = (props) => {
   /**EVENTO PARA MANDAR DATOS */
   const handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     setOpen(false);
     const dataNew = { ...dataMemorandum, type_memorandum: TipoMemo };
     AddorEdit(dataNew);
     //console.log(dataNew);
     setDataMemorandum({ ...initialValuesMemorandum });
   };
+=======
+    AddorEdit(dataMemorandum);
+    setDataMemorandum({ ...initialValuesMemorandum });
+  };
+  /*const consultaClass = () => {
+    db.collection("classRooms")
+      .doc(dataTeacher.classRoomId)
+      .get()
+      .then((response) => {
+        setDataClass(response.data());
+      });
+  };*/
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   /**capturar datos ESTUDIANTE */
   const handleSubmitEst = (e) => {
     e.preventDefault();
@@ -72,6 +104,7 @@ export const MemorandumComp = (props) => {
             });
           }
         });
+<<<<<<< HEAD
       if (dataTeacher) {
         db.collection("school_material")
           .doc(dataTeacher.subjectId)
@@ -87,6 +120,8 @@ export const MemorandumComp = (props) => {
           setMateria(bbbb);
         }
       }
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     } else {
       toast.error("Usuario No encontrado", {
         transition: Zoom,
@@ -111,8 +146,11 @@ export const MemorandumComp = (props) => {
       getLicenceId(updateId);
     }
   }, [updateId]);
+<<<<<<< HEAD
 
   /*handleSubmit no te olvides es el que agrega todo*/
+=======
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   return (
     <>
       <Form className="form-memorandum-secre">
@@ -136,6 +174,7 @@ export const MemorandumComp = (props) => {
           </Form.Field>
           <Form.Field>
             <label className="label-memorandum">Tipo Memorandums</label>
+<<<<<<< HEAD
             <Dropdown
               placeholder="Tipo Memorandum"
               fluid
@@ -144,6 +183,14 @@ export const MemorandumComp = (props) => {
               onChange={(e, data) => {
                 setTipoMemo(data.value);
               }}
+=======
+            <Form.Input
+              fluid
+              placeholder="Tipo Memorandums"
+              name="type_memorandum"
+              value={dataMemorandum.type_memorandum}
+              onChange={handleDataMemorandum}
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             />
           </Form.Field>
         </Form.Group>
@@ -170,18 +217,26 @@ export const MemorandumComp = (props) => {
           />
         </Form.Field>
         <Button.Group>
+<<<<<<< HEAD
           <Button
             positive
             onClick={() => {
               setOpen(true);
             }}
           >
+=======
+          <Button positive onClick={handleSubmit}>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             {updateId === "" ? "Conceder Memorandum" : "Actualizar Memorandum"}
           </Button>
         </Button.Group>
       </Form>
       <Label.Group size="large" className="info-teacher-memorandum">
+<<<<<<< HEAD
         <h2 className="titulo-info-estuden-h2">Datos Profesor</h2>
+=======
+        <h2>Datos Profesor</h2>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
         <Label className="label-memorandum-info">C.I.</Label>
         <Label className="label-memorandum-info2">
           {dataTeacher.id == undefined ? "No" : dataTeacher.id}
@@ -214,6 +269,7 @@ export const MemorandumComp = (props) => {
         </Label>
         <br></br>
         <Label className="label-memorandum-info">Materia</Label>
+<<<<<<< HEAD
         <Label className="label-memorandum-info2">
           {Materia == "" ? "No" : Materia}
         </Label>
@@ -246,6 +302,10 @@ export const MemorandumComp = (props) => {
           </Modal.Actions>
         </Modal>
       </div>
+=======
+        <Label className="label-memorandum-info2">asf</Label>
+      </Label.Group>
+>>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     </>
   );
 };
