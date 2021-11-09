@@ -11,7 +11,7 @@ import "firebase/firestore";
 const db = firebase.firestore(firebase);
 
 export default function LoginForm(props) {
-  const { setSelectedForm, setUser, setUserAccount, setParams } = props;
+  const { setSelectedForm, setUser, setParams } = props;
   const [formData, setFormData] = useState(defaultValueForm());
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,20 +32,25 @@ export default function LoginForm(props) {
     setFormError({});
     let errors = {};
     let formOk = true;
-    if (formData.userName.length < 6) {
-      errors.userName = true;
+    if (formData.carnet.length < 6) {
+      errors.carnet = true;
       formOk = false;
     }
     if (formData.password.length < 6) {
       errors.password = true;
       formOk = false;
     }
+    if (!formData.typeUser) {
+      errors.typeUser = true;
+      formOk = false;
+    }
     setFormError(errors);
     if (formOk) {
       setIsLoading(true);
-      db.collection("accounts")
-        .where("userName", "==", formData.userName)
+      db.collection(formData.typeUser + "s")
+        .where("id", "==", formData.carnet)
         .where("password", "==", formData.password)
+        .where("typeUser", "==", formData.typeUser)
         .limit(1)
         .get()
         .then((response) => {
@@ -53,45 +58,15 @@ export default function LoginForm(props) {
             map(response.docs, (user) => {
               const userAux = user.data();
               userAux.id = user.id;
-              const typeUserCollection =
-                userAux.typeUser === "Secretario"
-                  ? "admins"
-                  : userAux.typeUser === "Director"
-                  ? "admins"
-                  : userAux.typeUser === "Profesor"
-                  ? "teachers"
-                  : null;
-              if (typeUserCollection) {
-                db.collection(typeUserCollection)
-                  .doc(userAux.id)
-                  .get()
-                  .then((response) => {
-                    const userInfoAux = response.data();
-                    userInfoAux.id = response.id;
-                    const paramsAux = {};
-                    paramsAux.zid = btoa(userAux.id);
-                    paramsAux.type = btoa(userAux.typeUser);
-                    localStorage.setItem(PARAMS, JSON.stringify(paramsAux));
-                    toast.success(
-                      `Iniciaste sesión de manera correcta como ${userAux.typeUser}`,
-                      {
-                        transition: Zoom,
-                      }
-                    );
-                    setParams(paramsAux);
-                    setUserAccount(userAux);
-                    setUser(userInfoAux);
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                    toast.error(
-                      "Ocurrio un error de conexion, puede ser que el sistema no funcione o el internet este muy lento",
-                      {
-                        transition: Zoom,
-                      }
-                    );
-                  });
-              }
+              toast.success("Iniciaste sesión de manera correcta", {
+                transition: Zoom,
+              });
+              setUser(userAux);
+              const paramsAux = {};
+              paramsAux.zid = btoa(userAux.id);
+              paramsAux.type = btoa(userAux.typeUser);
+              localStorage.setItem(PARAMS, JSON.stringify(paramsAux));
+              setParams(paramsAux);
             });
           } else {
             toast.warn("El usuario no existe o es incorrecto", {
@@ -113,6 +88,12 @@ export default function LoginForm(props) {
     }
   };
 
+  const userTypes = [
+    { key: "1", value: null, text: "Eliga una opción" },
+    { key: "2", value: "admin", text: "Administrativo" },
+    { key: "3", value: "teacher", text: "Profesor" },
+  ];
+
   return (
     <div className="login-form">
       <Form onSubmit={onSubmit} onChange={onChange}>
@@ -120,12 +101,12 @@ export default function LoginForm(props) {
           <label>Carnet de Identidad</label>
           <Input
             type="number"
-            name="userName"
+            name="carnet"
             placeholder="Carnet de Identidad"
             icon="id card"
-            error={formError.userName}
+            error={formError.carnet}
           />
-          {formError.userName && (
+          {formError.carnet && (
             <span className="error-text">
               * Por favor, introduzca un carnet de identidad válido.
             </span>
@@ -156,6 +137,29 @@ export default function LoginForm(props) {
             </span>
           )}
         </Form.Field>
+        <Form.Field>
+          <label>Tipo de Usuario</label>
+          <Dropdown
+            placeholder="Escoge un tipo de Usuario"
+            name="typeUser"
+            search
+            fluid
+            selection
+            lazyLoad
+            options={userTypes}
+            icon="user"
+            onChange={(e, data) =>
+              setFormData({ ...formData, typeUser: data.value })
+            }
+            error={formError.typeUser}
+          />
+          {formError.typeUser && (
+            <span className="error-text">
+              * Por favor, seleccione una opción válida.
+            </span>
+          )}
+        </Form.Field>
+
         <Button type="Submit" loading={isLoading}>
           Iniciar Sesión
         </Button>
@@ -166,7 +170,8 @@ export default function LoginForm(props) {
 
 function defaultValueForm() {
   return {
-    userName: "",
+    carnet: "",
     password: "",
+    typeUser: "",
   };
 }

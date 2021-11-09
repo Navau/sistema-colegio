@@ -1,0 +1,50 @@
+@import "../../../scss/index.scss";
+
+.header-persons {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 25px 35px;
+
+  &__export-options {
+    &__button-pdf {
+      background-color: $color-pdf !important;
+    }
+    &__button-word {
+      background-color: $color-word !important;
+    }
+  }
+
+  &__add-person {
+    &__button-add {
+      margin-top: 8px !important;
+    }
+  }
+
+  .ui.animated.button {
+    width: 150px;
+    height: 50px;
+    margin: 0 10px;
+    padding-top: 18px;
+    color: $font-light !important;
+
+    .visible.content {
+      align-content: center;
+      text-align: center;
+
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
+    }
+
+    .hidden.content {
+      align-content: center;
+      text-align: center;
+
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
+      font-size: 18px;
+    }
+  }
+}

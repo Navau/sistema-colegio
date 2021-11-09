@@ -6,7 +6,7 @@ import LogoSchool from "../../assets/img/logo-school.jpg";
 import "./Auth.scss";
 
 export default function Auth(props) {
-  const { setUser, setUserAccount, setParams } = props;
+  const { setUser, setParams } = props;
   const [selectedForm, setSelectedForm] = useState("login");
   const handlerForm = () => {
     switch (selectedForm) {
@@ -15,7 +15,6 @@ export default function Auth(props) {
           <LoginForm
             setSelectedForm={setSelectedForm}
             setUser={setUser}
-            setUserAccount={setUserAccount}
             setParams={setParams}
           />
         );
@@ -32,8 +31,8 @@ export default function Auth(props) {
         <div className="auth__box__logo">
           <img src={LogoSchool} alt="Logo Ave Maria" />
           <div>
-            <h1>Ave María</h1>
-            <h2>Sistema de Gestión</h2>
+            <h1>Ave Maria</h1>
+            <h2>Sistema de Gestion</h2>
           </div>
         </div>
         {handlerForm()}

@@ -1,39 +1,4 @@
 @import "../../scss/index.scss";
 
 .qualification-management {
-  .message {
-    margin: 20px 10px;
-    background-color: $primary_color !important;
-    .fond-message {
-      .header {
-        text-align: center;
-        h3 {
-          color: $font-light !important;
-          font-weight: bold;
-          font-size: 35px;
-          transition: 0.2s;
-          &:hover {
-            font-size: 40px;
-            transition: 0.2s;
-          }
-        }
-      }
-    }
-  }
-
-  .filtrar-calification {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  .table {
-    display: grid;
-    justify-content: center;
-  }
-
-  .input-filtro-info {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-  }
 }

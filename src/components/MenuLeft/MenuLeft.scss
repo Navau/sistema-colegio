@@ -9,130 +9,7 @@
   width: 100%;
   flex-direction: column;
 
-  h1 {
-    color: $font-light;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 35px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .show-hide-menu-width-1 {
-    font-size: 0px !important;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    i {
-      font-size: 16px;
-      color: $font-light;
-    }
-  }
-
-  .show-hide-menu-dropdown-width-1 {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0 !important;
-    .divider.text {
-      display: none;
-    }
-    i {
-      margin-left: 0 !important;
-      font-size: 16px;
-      color: $font-light;
-    }
-  }
-
-  .ui.dropdown {
-    padding-left: 20px;
-    &:hover {
-      background-color: $primary_color_highlight;
-      .divider.text {
-        color: $font_dark;
-      }
-    }
-    .divider.text {
-      color: $font-light;
-      font-weight: bold;
-      font-size: 16px;
-    }
-  }
-
-  .dropdown-active-option {
-    font-size: 16px;
-    border-left: 4px solid $font-light;
-    border-color: $font-light;
-    cursor: pointer;
-
-    &:hover {
-      color: $font-light;
-      .divider.text {
-        color: $font-light !important;
-      }
-      i {
-        color: $font-light;
-      }
-      .menu.transition.visible {
-        i {
-          color: $primary_color_dark;
-        }
-      }
-      background-color: $primary_color_dark !important;
-      cursor: pointer;
-    }
-
-    .menu.transition.visible {
-      .item {
-        color: $primary_color_dark;
-        background-color: $font-light !important;
-        &:hover {
-          background-color: $primary_color_highlight_hover !important;
-          border-left: 4px solid $primary_color_dark;
-          cursor: pointer;
-        }
-      }
-      .item.active {
-        border-left: 4px solid $primary_color_dark;
-        cursor: pointer;
-        &:hover {
-          background-color: $primary_color_highlight_hover !important;
-        }
-      }
-    }
-  }
-
-  .dropdown-option {
-    &:hover {
-      border-left: 4px solid $primary_color_dark;
-      cursor: pointer;
-    }
-    .menu.transition.visible {
-      .item {
-        color: $primary_color_dark;
-        background-color: $font-light !important;
-        &:hover {
-          background-color: $primary_color_highlight_hover !important;
-          border-left: 4px solid $primary_color_dark;
-          cursor: pointer;
-        }
-      }
-      .item.active {
-        border-left: 4px solid $primary_color_dark;
-        cursor: pointer;
-        &:hover {
-          background-color: $primary_color_highlight_hover !important;
-        }
-      }
-    }
-  }
-
-  .item {
-    color: $font-light;
-
-    &:hover {
-      background-color: $primary_color_dark;
-    }
-  }
+  .item,
   a.item {
     color: $font-light;
     font-weight: bold;
@@ -141,20 +18,20 @@
     width: 100%;
 
     &:hover {
-      background-color: $primary_color_highlight;
+      background-color: $primary_color_highlight !important;
       border-color: $font-dark;
-      color: $font-dark;
+      color: $font-dark !important;
       cursor: pointer;
     }
     &.active {
-      color: $font-light;
-      background-color: $primary_color_dark;
-      border-color: $font-light;
+      color: $font-light !important;
+      background-color: $primary_color_dark !important;
+      border-color: $font-light !important;
       cursor: pointer;
 
       &:hover {
-        color: $font-light;
-        background-color: $primary_color_dark;
+        color: $font-light !important;
+        background-color: $primary_color_dark !important;
         cursor: pointer;
       }
     }

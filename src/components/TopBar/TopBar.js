@@ -2,35 +2,24 @@ import React from "react";
 import { Icon, Image } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 import DefaultUserImage from "../../assets/img/user.png";
-import { toast, Zoom } from "react-toastify";
-import { PARAMS } from "../../utils/constants";
 
 import "./TopBar.scss";
 
-function TopBar(props) {
-  const { user, history, setShowHideMenu, showHideMenu, setPage } = props;
+export default function TopBar(props) {
+  const { user } = props;
   const logout = () => {
-    history.push("/");
-    setPage("home");
-    localStorage.removeItem(PARAMS);
-    window.location.reload();
-    toast("Cerrando Sesión...", { transition: Zoom });
+    console.log("CERRANDO SESION...");
   };
-
-  const hideShowMenu = () => {
-    setShowHideMenu(showHideMenu == 3 ? 1 : 3);
-  };
-
   return (
     <>
       <div className="top-bar">
         <div className="top-bar__left">
-          <Icon name="bars" onClick={hideShowMenu} />
+          <Icon name="bars" />
         </div>
         <div className="top-bar__logout">
           <Link to="/">
             <Image src={DefaultUserImage} />
-            {user?.firstName} {user?.fatherLastName}
+            {user.names}
           </Link>
           <Icon name="power off" onClick={logout} />
         </div>
@@ -39,4 +28,3 @@ function TopBar(props) {
     </>
   );
 }
-export default withRouter(TopBar);
