@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Table, Button, Icon, Message } from "semantic-ui-react";
 import { map } from "lodash";
@@ -46,18 +45,6 @@ export const TableCpurseParallel = (props) => {
       </div>
       <div className="table">
         <Table inverted celled padded striped className="list-course-parallel">
-=======
-import React from "react";
-import { Table, Button, Icon } from "semantic-ui-react";
-
-export const TableCpurseParallel = () => {
-  const num = [1, 2, 3, 4];
-
-  return (
-    <>
-      <div>
-        <Table celled inverted selectable>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Nro.</Table.HeaderCell>
@@ -65,7 +52,6 @@ export const TableCpurseParallel = () => {
               <Table.HeaderCell>Descargar Plantilla</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-<<<<<<< HEAD
           <Table.Body>
             {DataCourse.map((da, index) => (
               <Table.Row
@@ -83,37 +69,10 @@ export const TableCpurseParallel = () => {
                   </Button>
                 </Table.Cell>
               </Table.Row>
-=======
-
-          <Table.Body>
-            {num.map(() => (
-              <RenderCourse />
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             ))}
           </Table.Body>
         </Table>
       </div>
-<<<<<<< HEAD
     </div>
   );
 };
-=======
-    </>
-  );
-};
-
-function RenderCourse() {
-  return (
-    <Table.Row>
-      <Table.Cell textAlign="center"> 1</Table.Cell>
-      <Table.Cell textAlign="center">1 "A" Sec.</Table.Cell>
-      <Table.Cell textAlign="center">
-        <Button positive>
-          <Icon name="arrow alternate circle down" />
-          Descargar Plantilla
-        </Button>
-      </Table.Cell>
-    </Table.Row>
-  );
-}
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e

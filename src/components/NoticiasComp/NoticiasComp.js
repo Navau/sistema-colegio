@@ -1,14 +1,8 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-<<<<<<< HEAD
 import { Form, Button, Image, Modal, Header, Icon } from "semantic-ui-react";
 import firebase from "../../utils/firebase";
 import "./NoticiasComp.scss";
-=======
-import { Form, Button, Image } from "semantic-ui-react";
-import firebase from "../../utils/firebase";
-import "./style-noticiasCom.css";
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 
 const db = firebase.firestore(firebase);
 
@@ -16,10 +10,7 @@ export const NoticiasComp = (props) => {
   const { AddorEdit, updateId } = props;
   const fecha = new Date();
   const dateH = moment(fecha).format("YYYY-MM-DD");
-<<<<<<< HEAD
   const [open, setOpen] = React.useState(false);
-=======
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   const initialValuesNews = {
     Datos: "",
     date_news: "",
@@ -45,7 +36,6 @@ export const NoticiasComp = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     setOpen(false);
     AddorEdit(dataNews, fileValue, fileValueOn);
     setDataNews({ ...initialValuesNews });
@@ -53,13 +43,6 @@ export const NoticiasComp = (props) => {
   };
   const getLicenceId = (id) => {
     db.collection("News")
-=======
-    AddorEdit(dataNews, fileValue, fileValueOn);
-    setDataNews({ ...initialValuesNews });
-  };
-  const getLicenceId = (id) => {
-    db.collection("student_license")
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       .doc(id)
       .get()
       .then((response) => {
@@ -67,11 +50,7 @@ export const NoticiasComp = (props) => {
       });
   };
   useEffect(() => {
-<<<<<<< HEAD
     if (updateId == "") {
-=======
-    if (updateId === "") {
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       setDataNews({ ...initialValuesNews });
     } else {
       getLicenceId(updateId);
@@ -105,7 +84,6 @@ export const NoticiasComp = (props) => {
         </Form.Field>
         <Form.Field>
           <label className="label-news">Suba su imagen</label>
-<<<<<<< HEAD
           <input type="file" onChange={handleImg} id="inputFilePhoto"></input>
         </Form.Field>
         <Button.Group>
@@ -116,19 +94,11 @@ export const NoticiasComp = (props) => {
             }}
           >
             {updateId == "" ? "Enviar Noticia" : "Actualizar Noticia"}
-=======
-          <input type="file" onChange={handleImg}></input>
-        </Form.Field>
-        <Button.Group>
-          <Button positive onClick={handleSubmit}>
-            {updateId === "" ? "Enviar Noticia" : "Actualizar Noticia"}
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
           </Button>
         </Button.Group>
       </Form>
       <div className="baner-aviso">
         <Image src={banner} size="medium" />
-<<<<<<< HEAD
         {!banner && <Image size="medium" src={imgDefault} />}
       </div>
       <Modal
@@ -157,10 +127,6 @@ export const NoticiasComp = (props) => {
           </Button>
         </Modal.Actions>
       </Modal>
-=======
-        {!banner && <Image src={imgDefault} />}
-      </div>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
     </>
   );
 };

@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { Form, Dropdown } from "semantic-ui-react";
-=======
-import React, { Component, useState } from "react";
-import { Form, Dropdown, Button, Label } from "semantic-ui-react";
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 import "./style.css";
 import { map } from "lodash";
 import firebase from "../../utils/firebase";
@@ -78,16 +73,6 @@ export const AddSchedule = () => {
     { key: "5", value: "qs", text: "5 Secundaria" },
     { key: "6", value: "ses", text: "6 Secundaria" },
   ];
-<<<<<<< HEAD
-=======
-  const academic_grade_primary = [
-    { key: "pp", value: "pp", text: "1 Primaria" },
-    { key: "sp", value: "sp", text: "2 Primaria" },
-    { key: "tp", value: "tp", text: "3 Primaria" },
-    { key: "cp", value: "cp", text: "4 Primaria" },
-    { key: "qp", value: "qp", text: "5 Primaria" },
-  ];
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   const days = [
     { key: "lunes", value: "lunes", text: "Lunes" },
     { key: "martes", value: "martes", text: "Martes" },

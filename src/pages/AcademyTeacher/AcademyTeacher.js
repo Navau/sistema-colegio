@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import { Message } from "semantic-ui-react";
 import { TableCpurseParallel } from "../../components/TableCourseParallel/TableCpurseParallel";
 import { TeacherSchedule } from "../../components/TeacherSchedule/TeacherSchedule";
@@ -47,27 +46,6 @@ export default function AcademyTeacher(props) {
 <div className="message">
         <Message className="fond-message">
           <Message.Header>
-=======
-import { Divider, Header, Dropdown, Message } from "semantic-ui-react";
-import { AsigmentMaterial } from "../../components/AsigmentMaterial/AsigmentMaterial";
-import { TableCpurseParallel } from "../../components/TableCourseParallel/TableCpurseParallel";
-import { TeacherSchedule } from "../../components/TeacherSchedule/TeacherSchedule";
-import "../QualificationManagement/styl.css";
-import "./style.css";
-
-const options = [
-  { key: "m01", text: "1 A", value: "1 A" },
-  { key: "m02", text: "3 B", value: "3 B" },
-  { key: "m03", text: "5 E", value: "5 E" },
-];
-
-export const AcademyTeacher = () => {
-  return (
-    <>
-      <div className="message">
-        <Message className="fond-message">
-          <Message.Header>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             <center>
               <h3>Academia - Unidad Educativa Ave Maria</h3>
             </center>
@@ -97,22 +75,6 @@ export const AcademyTeacher = () => {
       </Header>
 
       <div className="TeacherSchedule">
-<<<<<<< HEAD
         <TeacherSchedule />
       </div>
 */
-=======
-        <Dropdown
-          className="material-select-academy"
-          placeholder="Materia"
-          fluid
-          search
-          selection
-          options={options}
-        />
-        <TeacherSchedule />
-      </div>
-    </>
-  );
-};
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-<<<<<<< HEAD
 import {
   Message,
   Table,
@@ -10,14 +9,10 @@ import {
   Modal,
   Header,
 } from "semantic-ui-react";
-=======
-import { Message, Table, Button, Form, Input } from "semantic-ui-react";
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
 import { toast, Zoom } from "react-toastify";
 import firebase from "../../utils/firebase";
 import { map } from "lodash";
 import { MemorandumComp } from "../../components/MemorandumComp/MemorandumComp";
-<<<<<<< HEAD
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import imgLogoColegio from "./../../../src/assets/img/logo-school.jpg";
@@ -35,18 +30,10 @@ export default function Memorandums(props) {
   const [open2, setOpen2] = React.useState(false);
   const [IdMemo, setIdMemo] = useState("");
   const [DataFiltro, setDataFiltro] = useState("");
-=======
-
-const db = firebase.firestore(firebase);
-export const Memorandums = () => {
-  const [memorandum, setmemorandum] = useState([]);
-  const [updateId, setUpdateId] = useState("");
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   /*AGREGAR UNA LICENCIA*/
   const addMemorandum = (dataMemorandum) => {
     const { id_teacher, description, type_memorandum, date_assigned } =
       dataMemorandum;
-<<<<<<< HEAD
     if (updateId == "") {
       if (
         id_teacher !== "" &&
@@ -104,23 +91,6 @@ export const Memorandums = () => {
       }
     } else {
       const dateH2 = moment(date_assigned).format("DD-MM-YYYY");
-=======
-    if (updateId === "") {
-      db.collection("memorandum")
-        .doc()
-        .set({
-          id_teacher: id_teacher,
-          description: description,
-          type_memorandum: type_memorandum,
-          date_assigned: date_assigned,
-        })
-        .then(() => {
-          toast.success("Memorandum Registrado", {
-            transition: Zoom,
-          });
-        });
-    } else {
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       db.collection("memorandum")
         .doc(updateId)
         .update({
@@ -130,7 +100,6 @@ export const Memorandums = () => {
           date_assigned: date_assigned,
         })
         .then(() => {
-<<<<<<< HEAD
           var doc = new jsPDF();
           doc.addImage(imgLogoColegio, "JPEG", 15, 13, 50, 50);
           doc.text("UNIDAD EDUCATIVA PRIVADA", 80, 30);
@@ -160,8 +129,6 @@ export const Memorandums = () => {
           doc.text("..................................", 80, 200);
           doc.text("Unidad Educativa Boliviana Ave Maria ", 64, 210);
           doc.save("P" + dateH2 + id_teacher + ".pdf");
-=======
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
           toast.info("Memorandum Actualizado", {
             transition: Zoom,
           });
@@ -172,11 +139,7 @@ export const Memorandums = () => {
   /**LLENAR DATOS A LA TABLA */
   useEffect(() => {
     db.collection("memorandum")
-<<<<<<< HEAD
       .orderBy("date_assigned", "desc")
-=======
-      .orderBy("date_assigned", "asc")
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       .onSnapshot((querySnapshot) => {
         const dataLic = [];
         querySnapshot.forEach((doc) => {
@@ -187,23 +150,17 @@ export const Memorandums = () => {
   }, []);
   /**ELIMINAR LICENCIA */
   const onDeleteMemorandum = (id) => {
-<<<<<<< HEAD
     if (open2 == false) {
       setOpen2(true);
       setIdMemo(id);
     } else {
       setOpen2(false);
       db.collection("memorandum").doc(IdMemo).delete();
-=======
-    if (window.confirm("Esta seguro de eliminar este memorandum")) {
-      db.collection("memorandum").doc(id).delete();
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       toast.error("Memorandum Eliminada", {
         transition: Zoom,
       });
     }
   };
-<<<<<<< HEAD
 
   const handleDataFiltro = (e) => {
     const { value } = e.target;
@@ -247,26 +204,15 @@ export const Memorandums = () => {
       <div className="form-memorandums">
         <MemorandumComp AddorEdit={addMemorandum} updateId={updateId} />
       </div>
-=======
-  let cont = 1;
-
-  return (
-    <>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
       <div className="message">
         <Message className="fond-message">
           <Message.Header>
             <center>
-<<<<<<< HEAD
               <h3>Lista de Memorandums - Unidad Educativa Ave Maria</h3>
-=======
-              <h3>Gestion de Memorandums - Unidad Educativa Ave Maria</h3>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             </center>
           </Message.Header>
         </Message>
       </div>
-<<<<<<< HEAD
       <Form.Field className="input-filtro-info">
         <Input
           type="date"
@@ -354,57 +300,3 @@ export const Memorandums = () => {
     </div>
   );
 }
-=======
-      <div className="form-memorandum">
-        <MemorandumComp AddorEdit={addMemorandum} updateId={updateId} />
-      </div>
-      <h2 className="titulo-lista-memorandum">LISTA DE MEMORANDUMS</h2>
-      <Form.Field className="input-filtro-info">
-        <Input type="text" placeholder="Buscar...">
-          <input />
-          <Button type="submit" icon="search"></Button>
-        </Input>
-      </Form.Field>
-      <Table
-        celled
-        inverted
-        selectable
-        className="tabla-info-memorandum-teacher"
-      >
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Nro</Table.HeaderCell>
-            <Table.HeaderCell>ID Memorandum</Table.HeaderCell>
-            <Table.HeaderCell>C.I. Profesor</Table.HeaderCell>
-            <Table.HeaderCell>Fecha</Table.HeaderCell>
-            <Table.HeaderCell>Tipo Memorandum</Table.HeaderCell>
-            <Table.HeaderCell>Opciones</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {map(memorandum, (memo) => (
-            <Table.Row key={memo.id}>
-              <Table.Cell>{cont++}</Table.Cell>
-              <Table.Cell>{memo.id}</Table.Cell>
-              <Table.Cell>{memo.id_teacher}</Table.Cell>
-              <Table.Cell>{memo.date_assigned}</Table.Cell>
-              <Table.Cell>{memo.type_memorandum}</Table.Cell>
-              <Table.Cell>
-                <Button.Group>
-                  <Button color={"orange"} onClick={() => setUpdateId(memo.id)}>
-                    Modificar
-                  </Button>
-                  <Button.Or text="O" />
-                  <Button negative onClick={() => onDeleteMemorandum(memo.id)}>
-                    Eliminar
-                  </Button>
-                </Button.Group>
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-    </>
-  );
-};
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e

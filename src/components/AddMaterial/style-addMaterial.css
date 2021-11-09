@@ -17,11 +17,7 @@
   height: 300px;
   overflow: auto;
 }
-<<<<<<< HEAD
 .ui.form .add-subject-form {
-=======
-.ui.form {
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   width: 500px;
   height: 150px;
   margin-left: 500px;
@@ -29,7 +25,6 @@
 .modal-titulos-add-material {
   color: #ffff;
 }
-<<<<<<< HEAD
 .fondo-mof-cel-perfil.content {
   background-color: #194d55 !important;
 }
@@ -43,5 +38,3 @@
 .header.fonfo {
   color: aliceblue !important;
 }
-=======
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e

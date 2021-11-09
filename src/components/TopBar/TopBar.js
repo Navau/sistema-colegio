@@ -10,16 +10,11 @@ import "./TopBar.scss";
 function TopBar(props) {
   const { user, history, setShowHideMenu, showHideMenu, setPage } = props;
   const logout = () => {
-<<<<<<< HEAD
     history.push("/");
     setPage("home");
     localStorage.removeItem(PARAMS);
     window.location.reload();
     toast("Cerrando Sesión...", { transition: Zoom });
-=======
-    localStorage.clear();
-    window.location.reload(true);
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   };
 
   const hideShowMenu = () => {
@@ -35,11 +30,7 @@ function TopBar(props) {
         <div className="top-bar__logout">
           <Link to="/">
             <Image src={DefaultUserImage} />
-<<<<<<< HEAD
             {user?.firstName} {user?.fatherLastName}
-=======
-            {user.firstName + " " + user.secondName}
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
           </Link>
           <Icon name="power off" onClick={logout} />
         </div>

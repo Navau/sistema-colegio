@@ -53,7 +53,6 @@ export default function LoginForm(props) {
             map(response.docs, (user) => {
               const userAux = user.data();
               userAux.id = user.id;
-<<<<<<< HEAD
               const typeUserCollection =
                 userAux.typeUser === "Secretario"
                   ? "admins"
@@ -93,20 +92,6 @@ export default function LoginForm(props) {
                     );
                   });
               }
-=======
-              toast.success(
-                `Iniciaste sesión de manera correcta como ${userAux.typeUser}`,
-                {
-                  transition: Zoom,
-                }
-              );
-              setUser(userAux);
-              const paramsAux = {};
-              paramsAux.zid = btoa(userAux.id);
-              paramsAux.type = btoa(userAux.typeUser);
-              localStorage.setItem(PARAMS, JSON.stringify(paramsAux));
-              setParams(paramsAux);
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             });
           } else {
             toast.warn("El usuario no existe o es incorrecto", {

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Table, Message, Label, Button } from "semantic-ui-react";
 import { map } from "lodash";
@@ -295,18 +294,6 @@ export const TeacherSchedule = (props) => {
         <Table inverted celled padded striped className="list-teacher-schedule">
           <Table.Header>
             <Table.Row className="list-teacher-schedule__status-available">
-=======
-import React from "react";
-import { Table } from "semantic-ui-react";
-
-export const TeacherSchedule = () => {
-  return (
-    <>
-      <div>
-        <Table celled inverted selectable>
-          <Table.Header>
-            <Table.Row>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
               <Table.HeaderCell>Hrs</Table.HeaderCell>
               <Table.HeaderCell>Lunes</Table.HeaderCell>
               <Table.HeaderCell>Martes</Table.HeaderCell>
@@ -317,7 +304,6 @@ export const TeacherSchedule = () => {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-<<<<<<< HEAD
             <Table.Row className="list-teacher-schedule__status-available">
               <Table.Cell textAlign="center">14:00</Table.Cell>
               <Table.Cell> {Periodo01} </Table.Cell>
@@ -389,87 +375,10 @@ export const TeacherSchedule = () => {
               <Table.Cell> Periodo No Asignado</Table.Cell>
               <Table.Cell> Periodo No Asignado</Table.Cell>
               <Table.Cell> Periodo No Asignado</Table.Cell>
-=======
-            <Table.Row>
-              <Table.Cell textAlign="center">14:00</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">14:45</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">15:30</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">16:15</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">17:00</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">17:45</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">18:30</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell textAlign="center">19:15</Table.Cell>
-              <Table.Cell>Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
-              <Table.Cell> Materia1</Table.Cell>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
             </Table.Row>
           </Table.Body>
         </Table>
       </div>
-<<<<<<< HEAD
     </div>
-=======
-    </>
->>>>>>> 82947a1dc3060c0b2c9e27154fe459c98e02727e
   );
 };
